@@ -16,7 +16,7 @@ public class SingletonDemo2 {
     //加sunchronized ，调用效率低
     public static synchronized SingletonDemo2 getInstance(){
         if(instance == null){
-            return new SingletonDemo2();
+            instance =  new SingletonDemo2();
         }
         return instance;
     }

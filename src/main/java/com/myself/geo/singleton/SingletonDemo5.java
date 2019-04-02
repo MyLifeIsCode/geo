@@ -6,23 +6,14 @@ package com.myself.geo.singleton;
  * 实现方法如下：
  * 但是这个不是懒加载
  */
-public class SingletonDemo5 {
+public enum SingletonDemo5 {
 
-    private SingletonDemo5(){}
-    public static SingletonDemo5 getInstance(){
-        return Singleton.INSTANCE.getInstance();
+    //这个枚举元素，本身就是单例对象！
+    INSTANCE;
+
+    //添加自己需要的操作！
+    public void singletonOperation(){
     }
 
-    private static enum Singleton{
-        INSTANCE;
 
-        private SingletonDemo5 singleton;
-        //JVM会保证此方法绝对只调用一次
-        private Singleton(){
-            singleton = new SingletonDemo5();
-        }
-        public SingletonDemo5 getInstance(){
-            return singleton;
-        }
-    }
 }
